@@ -18,6 +18,7 @@
 
 \usepackage[parfill]{parskip}       % Do not indent aragraphs
 \usepackage{array}                  % required for boldface tabular columns
+\usepackage{ifthen}
 
 \nofiles                            % .aux files are not needed for resumes
 \pagestyle{empty}                   % resumes do not need page numbers
@@ -31,7 +32,7 @@
 \def \addressSep {$\diamond$}         % Set default address seperator
 
 % One or two address lines can be specified 
-\def \@addressone {}
+\let \@addressone \relax
 \let \@addresstwo \relax
 
 % \address command can be used to set first and second address (optional)
@@ -68,8 +69,9 @@
 \renewcommand{\document}{
   \ori@document                     % Begin document
   \printname                        % Print the name specified with \name
-  \printaddress{\@addressone}       % Print the first address specified
-  \@ifundefined{@addresstwo}{}{     % Print a second address if specified
+  \@ifundefined{@addressone}{}{     % Print the first address if specified
+    \printaddress{\@addressone}}
+  \@ifundefined{@addresstwo}{}{     % Print the second address if specified
     \printaddress{\@addresstwo}}
 }
 
