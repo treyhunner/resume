@@ -98,8 +98,11 @@
   %%    Employer (bold)                     Dates (regular)    %%
   %%    Title (emphasis)                Location (emphasis)    %%
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  {\bf #1}                 \hfill                  {    #2}    \\
+  {\bf #1}                 \hfill                  {    #2}
+  \ifthenelse{\equal{#3}{}}{}{
+  \\
   {\em #3}                 \hfill                  {\em #4}
+  }
   % \cdot used for bullets, items non-indented
   \begin{list}{$\cdot$}{\leftmargin=0em}
   \itemsep -0.5em \vspace{-0.5em}
