@@ -102,7 +102,7 @@
   \ifthenelse{\equal{#3}{}}{}{
   \\
   {\em #3}                 \hfill                  {\em #4}
-  }
+  }\smallskip
   % \cdot used for bullets, items non-indented
   \begin{list}{$\cdot$}{\leftmargin=0em}
   \itemsep -0.5em \vspace{-0.5em}
