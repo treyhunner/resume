@@ -16,7 +16,7 @@
 
 \LoadClass[11pt,letterpaper]{article}
 
-\usepackage[parfill]{parskip}       % Do not indent aragraphs
+\usepackage[parfill]{parskip}       % Do not indent paragraphs
 \usepackage{array}                  % required for boldface tabular columns
 \usepackage{ifthen}
 
