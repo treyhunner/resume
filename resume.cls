@@ -93,15 +93,22 @@
 }
 
 % Used to format job listing
-\newenvironment{rSubsection}[4]{
+\newenvironment{rSubsection}[6]{
   %%%%%%%%%%%%%%%%%%%%%% Default Layout: %%%%%%%%%%%%%%%%%%%%%%%%
-  %%    Employer (bold)                     Dates (regular)    %%
-  %%    Title (emphasis)                Location (emphasis)    %%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%    Employer (bold)                     Dates (regular)              %%
+  %%    Title (emphasis)                Location (emphasis)              %%
+  %%    Title (emphasis, optional)      Location (emphasis, optional)    %%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   {\bf #1}                 \hfill                  {    #2}% Stop a space
   \ifthenelse{\equal{#3}{}}{}{
   \\
   {\em #3}                 \hfill                  {\em #4}% Stop a space
+  % add second job title only if it was provided
+  \def\temp{#5}\ifx\temp\empty
+  \else
+    \\
+    {\em #5}                 \hfill                  {\em #6}% Stop a space
+  \fi
   }\smallskip
   % \cdot used for bullets, items non-indented
   \begin{list}{$\cdot$}{\leftmargin=0em}
