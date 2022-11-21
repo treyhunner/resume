@@ -65,9 +65,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DOCUMENT: Create the head of the document
 
-\let\ori@document=\document
-\renewcommand{\document}{
-  \ori@document                     % Begin document
+\AtBeginDocument{                     % Begin document
   \printname                        % Print the name specified with \name
   \@ifundefined{@addressone}{}{     % Print the first address if specified
     \printaddress{\@addressone}}
